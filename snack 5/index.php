@@ -24,6 +24,27 @@ perché non avevano mai avuto nessuna avventura né fatto niente di imprevedibil
 presupporre l'opinione di un Baggins su un problema qualsiasi senza che ci fosse bisogno di
 chiedergliela. Questa è la storia di come un Baggins ebbe un'avventura e si trovò a fare e dire
 cose del tutto imprevedibili. Può anche aver perso il rispetto del vicinato, ma in cambio ci
-guadagnò... bene, vedrete se alla fine ci guadagnò qualche cosa"
+guadagnò... bene, vedrete se alla fine ci guadagnò qualche cosa";
+
+$paragraphs = explode('.', $loHobbit);
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <?php
+    foreach ($paragraphs as $paragraph) { ?>
+        <p>PARAGRAFO: <?php echo $paragraph ?></p>
+    <?php } ?>
+</body>
+
+</html>
