@@ -1,12 +1,15 @@
 <!-- Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” -->
 
-<?
+<?php
 
 
-if (empty($_GET['name']) === false) {
+if (empty($_GET['name']) === false && empty($_GET['mail']) === false && empty($_GET['age']) === false) {
+    $name = $_GET["name"];
+    $mail = $_GET["mail"];
+    $age = $_GET["age"];
 
-    $name = $_GET['name'];
-    if (strlen($name) > 3) {
+
+    if (strlen($name) > 3 && is_numeric($age) && strpos($mail, '@') && strpos($mail, '.')) {
         $message = 'Accesso riuschito';
     } else {
         $message = 'Accesso non riuscito';
@@ -15,28 +18,8 @@ if (empty($_GET['name']) === false) {
     $message = 'Non hai passato nessun valore';
 }
 
-if (empty($_GET['age']) === false) {
-    $age = $_GET['age'];
-    if (is_numeric($age)) {
-        $message = 'Accesso riuschito';
-    } else {
-        $message = 'Accesso non riuscito';
-    }
-} else {
-    $message = 'Non hai passato nessun valore';
-}
 
-if (empty($_GET['mail']) === false) {
 
-    $mail = $_GET['mail'];
-    if (strpos($mail, '@') !== false && strpos($mail, '.') !== false) {
-        $message = 'Accesso riuschito';
-    } else {
-        $message = 'Accesso non riuscito';
-    }
-} else {
-    $message = 'Non hai passato nessun valore';
-}
 
 
 
